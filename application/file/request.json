@@ -1,0 +1,142 @@
+[
+    {
+        "id": 1,
+        "name": "Carrot",
+        "type": "vegetable",
+        "quantity": 10922,
+        "unit": "g"
+    },
+    {
+        "id": 2,
+        "name": "Apples",
+        "type": "fruit",
+        "quantity": 20,
+        "unit": "kg"
+    },
+    {
+        "id": 3,
+        "name": "Pears",
+        "type": "fruit",
+        "quantity": 3500,
+        "unit": "g"
+    },
+    {
+        "id": 4,
+        "name": "Melons",
+        "type": "fruit",
+        "quantity": 120,
+        "unit": "kg"
+    },
+    {
+        "id": 5,
+        "name": "Beans",
+        "type": "vegetable",
+        "quantity": 65000,
+        "unit": "g"
+    },
+    {
+        "id": 6,
+        "name": "Beetroot",
+        "type": "vegetable",
+        "quantity": 950,
+        "unit": "g"
+    },
+    {
+        "id": 7,
+        "name": "Broccoli",
+        "type": "vegetable",
+        "quantity": 3,
+        "unit": "kg"
+    },
+    {
+        "id": 8,
+        "name": "Berries",
+        "type": "fruit",
+        "quantity": 10000,
+        "unit": "g"
+    },
+    {
+        "id": 9,
+        "name": "Tomatoes",
+        "type": "vegetable",
+        "quantity": 5,
+        "unit": "kg"
+    },
+    {
+        "id": 10,
+        "name": "Celery",
+        "type": "vegetable",
+        "quantity": 20,
+        "unit": "kg"
+    },
+    {
+        "id": 11,
+        "name": "Cabbage",
+        "type": "vegetable",
+        "quantity": 500,
+        "unit": "kg"
+    },
+    {
+        "id": 12,
+        "name": "Onion",
+        "type": "vegetable",
+        "quantity": 50,
+        "unit": "kg"
+    },
+    {
+        "id": 13,
+        "name": "Cucumber",
+        "type": "vegetable",
+        "quantity": 8,
+        "unit": "kg"
+    },
+    {
+        "id": 14,
+        "name": "Bananas",
+        "type": "fruit",
+        "quantity": 100,
+        "unit": "kg"
+    },
+    {
+        "id": 15,
+        "name": "Oranges",
+        "type": "fruit",
+        "quantity": 24,
+        "unit": "kg"
+    },
+    {
+        "id": 16,
+        "name": "Avocado",
+        "type": "fruit",
+        "quantity": 10,
+        "unit": "kg"
+    },
+    {
+        "id": 17,
+        "name": "Lettuce",
+        "type": "fruit",
+        "quantity": 20830,
+        "unit": "g"
+    },
+    {
+        "id": 18,
+        "name": "Kiwi",
+        "type": "fruit",
+        "quantity": 10,
+        "unit": "kg"
+    },
+    {
+        "id": 19,
+        "name": "Kumquat",
+        "type": "fruit",
+        "quantity": 90000,
+        "unit": "g"
+    },
+    {
+        "id": 20,
+        "name": "Pepper",
+        "type": "vegetable",
+        "quantity": 150,
+        "unit": "kg"
+    }
+]

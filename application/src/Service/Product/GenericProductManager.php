@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Service\Product;
 
 use App\Dto\ProductDto;
+use App\Entity\Product;
 use App\Enum\ProductTypeEnum;
 use App\Factory\ProductFactory;
 use App\Repository\ProductRepository;
@@ -27,6 +28,18 @@ readonly class GenericProductManager implements ProductManagerInterface
     public function search(string $query): array
     {
         return $this->repository->searchByName($query, $this->type->value);
+    }
+
+    public function find(int $id): ?Product
+    {
+        $product = $this->repository->find($id);
+        $expectedClass = $this->type->getEntityClass();
+
+        if ($product instanceof $expectedClass) {
+            return $product;
+        }
+
+        return null;
     }
 
     public function add(ProductDto $dto): void

@@ -40,6 +40,19 @@ final class ProductController extends AbstractController
         return $this->json($manager->search($query));
     }
 
+    #[Route('/{id<\d+>}', name: 'api_products_get', methods: ['GET'])]
+    public function get(ProductTypeEnum $type, int $id): JsonResponse
+    {
+        $manager = $this->factory->create($type);
+        $product = $manager->find($id);
+
+        if ($product === null) {
+            throw $this->createNotFoundException('Product not found.');
+        }
+
+        return $this->json($product);
+    }
+
     #[Route('', name: 'api_products_add', methods: ['POST'])]
     public function add(
         ProductTypeEnum $type,

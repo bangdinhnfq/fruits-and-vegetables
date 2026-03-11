@@ -8,13 +8,17 @@ use App\Enum\ProductTypeEnum;
 use App\Enum\ProductUnitEnum;
 use App\Repository\ProductRepository;
 use App\Trait\UnitConverter\UnitConverterTrait;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
 #[ORM\Table(name: 'products')]
 #[ORM\InheritanceType('SINGLE_TABLE')]
 #[ORM\DiscriminatorColumn(name: 'type', type: 'string', enumType: ProductTypeEnum::class)]
-#[ORM\DiscriminatorMap([ProductTypeEnum::FRUIT->value => Fruit::class, ProductTypeEnum::VEGETABLE->value => Vegetable::class])]
+#[ORM\DiscriminatorMap([
+    ProductTypeEnum::FRUIT->value => Fruit::class,
+    ProductTypeEnum::VEGETABLE->value => Vegetable::class
+])]
 abstract class Product
 {
     use UnitConverterTrait;
@@ -34,17 +38,17 @@ abstract class Product
     private int $quantity;
 
     #[ORM\Column(type: 'datetime_immutable')]
-    private \DateTimeImmutable $createdAt;
+    private DateTimeImmutable $createdAt;
 
     #[ORM\Column(type: 'datetime_immutable')]
-    private \DateTimeImmutable $updatedAt;
+    private DateTimeImmutable $updatedAt;
 
     public function __construct(string $name, int $quantity, ?string $requestId = null)
     {
         $this->name = $name;
         $this->quantity = $quantity;
         $this->requestId = $requestId;
-        $now = new \DateTimeImmutable();
+        $now = new DateTimeImmutable();
         $this->createdAt = $now;
         $this->updatedAt = $now;
     }
@@ -99,24 +103,24 @@ abstract class Product
         return $this;
     }
 
-    public function getCreatedAt(): \DateTimeImmutable
+    public function getCreatedAt(): DateTimeImmutable
     {
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeImmutable $createdAt): self
+    public function setCreatedAt(DateTimeImmutable $createdAt): self
     {
         $this->createdAt = $createdAt;
 
         return $this;
     }
 
-    public function getUpdatedAt(): \DateTimeImmutable
+    public function getUpdatedAt(): DateTimeImmutable
     {
         return $this->updatedAt;
     }
 
-    public function setUpdatedAt(\DateTimeImmutable $updatedAt): self
+    public function setUpdatedAt(DateTimeImmutable $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
 

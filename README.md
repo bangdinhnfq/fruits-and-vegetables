@@ -43,20 +43,41 @@ docker-compose down -v   # Stops containers AND wipes the database volume
 
 ---
 
+## 🧪 Running Tests
+
+This project uses PHPUnit for unit testing. You can run the test suite directly inside the Docker container:
+
+```bash
+docker-compose exec app bin/phpunit
+
+```
+
+Alternatively, if you are working directly inside the `application` directory locally:
+
+```bash
+cd application
+bin/phpunit
+
+```
+
+---
+
 ## 📂 Source Code Structure
 
 ```text
 .
-├── application/         # Core PHP source code (Symfony/Modern PHP)
-│   ├── Controller/      # API Endpoints
-│   ├── Dto/             # Data Transfer Objects & Request Payloads
-│   ├── Entity/          # Doctrine Database Entities
-│   ├── Enum/            # Strongly typed enumerations (e.g., ProductTypeEnum)
-│   ├── Repository/      # Database query logic
-│   └── Service/         # Core business logic and managers
-├── nginx/               # Nginx reverse proxy configurations
-├── docker-compose.yml   # Docker services definition (web, app, db)
-└── Dockerfile           # PHP image build instructions
+├── application/             # Core PHP application
+│   ├── src/                 # Source code (Symfony/Modern PHP)
+│   │   ├── Controller/      # API Endpoints
+│   │   ├── Dto/             # Data Transfer Objects & Request Payloads
+│   │   ├── Entity/          # Doctrine Database Entities
+│   │   ├── Enum/            # Strongly typed enumerations (e.g., ProductTypeEnum)
+│   │   ├── Repository/      # Database query logic
+│   │   └── Service/         # Core business logic and managers
+│   └── tests/               # PHPUnit test suites
+├── nginx/                   # Nginx reverse proxy configurations
+├── docker-compose.yml       # Docker services definition (web, app, db)
+└── Dockerfile               # PHP image build instructions
 
 ```
 
